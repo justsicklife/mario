@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
+#include "Camera.h"
 
 int main() {
 	// window 객체를 생성하는 생성자인데 
@@ -7,6 +8,8 @@ int main() {
 
 	// deltaClock 이라는 객체를 생성
 	sf::Clock deltaClock;
+
+	Camera camera;
 
 	Begin(window);
 
@@ -26,6 +29,9 @@ int main() {
 				window.close();
 			}
 		}
+
+		// 카메라가 바라보는 방향설정
+		window.setView(camera.GetView(window.getSize()));
 
 		Update(deltaTime);
 
