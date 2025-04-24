@@ -10,8 +10,6 @@ int main() {
 	// deltaClock 이라는 객체를 생성
 	sf::Clock deltaClock;
 
-	Camera camera;
-
 	sf::Texture texture{};
 
 	sf::Sprite sprite(texture);
