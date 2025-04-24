@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "Renderer.h"
 
 #pragma once
 
@@ -6,4 +7,4 @@ void Begin(sf::RenderWindow& window);
 
 void Update(float deltaTime);
 
-void Render(sf::RenderWindow& window);
+void Render(Renderer& renderer);

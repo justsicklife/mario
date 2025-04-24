@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 #include "Camera.h"
+#include "Renderer.h"
 
 int main() {
 	// window 객체를 생성하는 생성자인데 
@@ -10,6 +11,13 @@ int main() {
 	sf::Clock deltaClock;
 
 	Camera camera;
+
+	sf::Texture texture{};
+
+	sf::Sprite sprite(texture);
+
+	// renderer 에 window,sprite 를 넣는다.
+	Renderer renderer(window, sprite);
 
 	Begin(window);
 
@@ -39,7 +47,7 @@ int main() {
 		window.clear();
 		
 		// 화면에 그릴 요소 정하기
-		Render(window);
+		Render(renderer);
 
 		// 내부 버퍼를 그리고 이걸하면 버퍼를 화면에 전환한다
 		window.display();
